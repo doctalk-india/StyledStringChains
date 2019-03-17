@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		7D37E44D223E8A0400F6B8F9 /* StyledStringChains.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D37E44B223E8A0400F6B8F9 /* StyledStringChains.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D37E454223E8A9C00F6B8F9 /* NSAttributedString+stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D37E453223E8A9C00F6B8F9 /* NSAttributedString+stylable.swift */; };
+		7D37E456223E8AF300F6B8F9 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D37E455223E8AF300F6B8F9 /* String+extensions.swift */; };
+		7D37E458223ED4F000F6B8F9 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D37E457223ED4F000F6B8F9 /* Stylable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D37E448223E8A0400F6B8F9 /* StyledStringChains.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StyledStringChains.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D37E44B223E8A0400F6B8F9 /* StyledStringChains.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyledStringChains.h; sourceTree = "<group>"; };
 		7D37E44C223E8A0400F6B8F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D37E453223E8A9C00F6B8F9 /* NSAttributedString+stylable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+stylable.swift"; sourceTree = "<group>"; };
+		7D37E455223E8AF300F6B8F9 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		7D37E457223ED4F000F6B8F9 /* Stylable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,9 @@
 			children = (
 				7D37E44B223E8A0400F6B8F9 /* StyledStringChains.h */,
 				7D37E44C223E8A0400F6B8F9 /* Info.plist */,
+				7D37E453223E8A9C00F6B8F9 /* NSAttributedString+stylable.swift */,
+				7D37E455223E8AF300F6B8F9 /* String+extensions.swift */,
+				7D37E457223ED4F000F6B8F9 /* Stylable.swift */,
 			);
 			path = StyledStringChains;
 			sourceTree = "<group>";
@@ -95,6 +104,7 @@
 				TargetAttributes = {
 					7D37E447223E8A0400F6B8F9 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -130,6 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D37E458223ED4F000F6B8F9 /* Stylable.swift in Sources */,
+				7D37E456223E8AF300F6B8F9 /* String+extensions.swift in Sources */,
+				7D37E454223E8A9C00F6B8F9 /* NSAttributedString+stylable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +274,7 @@
 		7D37E451223E8A0400F6B8F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -278,6 +292,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = care.pulse.StyledStringChains;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +301,7 @@
 		7D37E452223E8A0400F6B8F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
