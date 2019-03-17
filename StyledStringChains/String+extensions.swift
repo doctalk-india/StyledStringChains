@@ -13,15 +13,3 @@ extension String {
         return NSMutableAttributedString(string: self)
     }
 }
-
-func example() {
-    "The sky is red".styled
-        .font(.systemFont(ofSize: 14))
-        .foregroundColor(.red)
-        .underlineStyle(.byWord)
-        .underlineColor(.black)
-    ++
-    "The ocean is blue".styled
-        .font(.systemFont(ofSize: 14))
-    .asAttributedString
-}

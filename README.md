@@ -29,9 +29,8 @@ let result = "The sky is red".styled
   ++
 "The ocean is blue".styled
     .font(.systemFont(ofSize: 14))
-.asAttributedString
 
-UILabel().attributedString = result
+UILabel().attributedString = result.asAttributedString
 ```
 
 ## Contributing
