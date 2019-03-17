@@ -2,6 +2,13 @@
 
 A sweet syntactic sugar on top of `NSAttributedString` purely written in Swift 4.2.
 
+## Installing
+
+### Carthage
+
+```
+github "doctalk-india/StyledStringChains" == 1.0.0
+```
 
 ## Usage
 
