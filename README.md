@@ -10,12 +10,11 @@ A sweet syntactic sugar on top of `NSAttributedString` purely written in Swift 4
 Start by writing a string and keep chaining methods.
 
 ```swift
-"The sky is red".styled
+UILabel().styledString = "The sky is red".styled
   .font(.systemFont(ofSize: 14))
   .foregroundColor(.red)
   .underlineStyle(.byWord)
   .underlineColor(.black)
-  .asAttributedString
 ```
 
 ### Chaining
@@ -30,7 +29,15 @@ let result = "The sky is red".styled
 "The ocean is blue".styled
     .font(.systemFont(ofSize: 14))
 
-UILabel().attributedString = result.asAttributedString
+UILabel().styledString = result
+```
+
+### As NSAttributedString
+
+```swift
+UILabel().attributedText = "The sky is red".styled
+  .font(.systemFont(ofSize: 14))
+  .asAttributedString
 ```
 
 ## Contributing

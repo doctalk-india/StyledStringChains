@@ -32,3 +32,30 @@ public protocol Stylable {
 
     var asAttributedString: NSAttributedString { get }
 }
+
+protocol StylableView {
+    var attributedText: NSAttributedString? { get set }
+    var styledString: Stylable? { get set }
+}
+
+extension StylableView {
+    var styledString: Stylable? {
+        get {
+            guard let value = attributedText else { return nil }
+            return NSMutableAttributedString(attributedString: value)
+        }
+        set { self.attributedText = newValue?.asAttributedString }
+    }
+}
+
+extension UILabel: StylableView {}
+extension UITextField: StylableView {}
+
+extension UITextView {
+    var styledString: Stylable {
+        get {
+            return NSMutableAttributedString(attributedString: attributedText)
+        }
+        set { self.attributedText = newValue.asAttributedString }
+    }
+}
