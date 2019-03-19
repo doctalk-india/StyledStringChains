@@ -94,6 +94,14 @@ extension NSMutableAttributedString: Stylable {
         return addAttribute(.writingDirection, value: value)
     }
 
+    public func withSpace(_ count: Int) -> Stylable {
+        let x: String =  (0..<count).map { _ in " " }.joined()
+        return (self ++ x)
+    }
+
+    public func withDelimiter(_ delimiter: String) -> Stylable {
+        return self ++ delimiter;
+    }
 
     private func unwrap(_ range: NSRange?) -> NSRange {
         return range ?? NSRange(location: 0, length: string.count - 1)
@@ -107,7 +115,19 @@ extension NSMutableAttributedString: Stylable {
 
 infix operator ++
 
-static func ++ (lhs: Stylable, rhs: Stylable) -> Stylable {
+func ++ (lhs: Stylable, rhs: String) -> Stylable {
+    let base = lhs as! NSMutableAttributedString
+    base.append(NSAttributedString(string: rhs))
+    return base
+}
+
+func ++ (lhs: String, rhs: Stylable) -> Stylable {
+    let base = NSMutableAttributedString(string: lhs)
+    base.append(rhs.asAttributedString)
+    return base
+}
+
+func ++ (lhs: Stylable, rhs: Stylable) -> Stylable {
     let base = lhs as! NSMutableAttributedString
     base.append(rhs.asAttributedString)
     return base
