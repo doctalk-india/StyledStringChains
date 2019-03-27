@@ -29,6 +29,7 @@ public protocol Stylable {
     func underlineColor(_ value: UIColor) -> Stylable
     func underlineStyle(_ value: NSUnderlineStyle) -> Stylable
     func writingDirection(_ value: [NSWritingDirection]) -> Stylable
+    func withSpace(_ count: Int) -> Stylable
 
     var asAttributedString: NSAttributedString { get }
 }
