@@ -30,7 +30,6 @@ public protocol Stylable {
     func underlineStyle(_ value: NSUnderlineStyle) -> Stylable
     func writingDirection(_ value: [NSWritingDirection]) -> Stylable
     func withSpace(_ count: Int) -> Stylable
-    func withDelimiter(_ delimiter: String) -> Stylable
 
     var asAttributedString: NSAttributedString { get }
 }

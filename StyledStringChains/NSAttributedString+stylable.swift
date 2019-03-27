@@ -8,6 +8,12 @@
 
 import Foundation
 
+extension NSAttributedString {
+    var mutable: NSMutableAttributedString {
+        return NSMutableAttributedString(attributedString: self)
+    }
+}
+
 extension NSMutableAttributedString: Stylable {
 
     public var asAttributedString: NSAttributedString {
@@ -96,11 +102,7 @@ extension NSMutableAttributedString: Stylable {
 
     public func withSpace(_ count: Int) -> Stylable {
         let x: String =  (0..<count).map { _ in " " }.joined()
-        return (self ++ x)
-    }
-
-    public func withDelimiter(_ delimiter: String) -> Stylable {
-        return self ++ delimiter;
+        return self ++ x
     }
 
     private func unwrap(_ range: NSRange?) -> NSRange {
@@ -116,7 +118,7 @@ extension NSMutableAttributedString: Stylable {
 infix operator ++
 
 func ++ (lhs: Stylable, rhs: String) -> Stylable {
-    let base = lhs as! NSMutableAttributedString
+    let base = lhs.asAttributedString.mutable
     base.append(NSAttributedString(string: rhs))
     return base
 }
@@ -128,7 +130,7 @@ func ++ (lhs: String, rhs: Stylable) -> Stylable {
 }
 
 func ++ (lhs: Stylable, rhs: Stylable) -> Stylable {
-    let base = lhs as! NSMutableAttributedString
+    let base = lhs.asAttributedString.mutable
     base.append(rhs.asAttributedString)
     return base
 }
